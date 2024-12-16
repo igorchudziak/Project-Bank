@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Overschrijven</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Logo</a>
+        <nav class="navbar">
+            <a href="#">Rekeningen</a>
+            <a href="overschrijven.html">Overschrijvingen</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#">Pagina 4</a>
+            <a href="inloggen.html">Inloggen</a>
+        </nav>
+    </header>
+    <section>
+    <div class="container">
+        <h2>Geld Overschrijven</h2>
+        <form id="transferForm">
+            <label for="fromAccount">Van rekening:</label>
+            <select id="fromAccount">
+                <option value="1500">Betaalrekening (€1500.00)</option>
+            </select>
+
+            <label for="toAccount">Naar rekening:</label>
+            <select id="toAccount">
+                <option value="savings">Spaarrekening</option>
+            </select>
+
+            <label for="amount">Bedrag:</label>
+            <input type="number" id="amount" placeholder="Voer bedrag in" required>
+
+            <button type="button" id="transferButton">Overschrijven</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    </section>
+    <!--Deze code werkt niet als ik het in de algemene javascript bestand zet. 
+    De oplossing komt wel later
+    -->
+    <script defer>
+        let balance = 1500;
+
+document.getElementById("transferButton").addEventListener("click", function () {
+    const amountInput = document.getElementById("amount").value;
+    const messageDiv = document.getElementById("message");
+    const amount = parseFloat(amountInput);
+
+    messageDiv.innerHTML = "";
+    messageDiv.className = "message";
+
+    if (isNaN(amount) || amount <= 0) {
+        messageDiv.textContent = "Voer een geldig bedrag in.";
+        messageDiv.classList.add("error");
+        return;
+    }
+
+    if (amount <= balance) {
+        balance -= amount;
+        messageDiv.textContent = `€${amount.toFixed(2)} is succesvol overgeschreven van Betaalrekening naar Spaarrekening.`;
+        messageDiv.classList.add("success");
+    } else {
+        messageDiv.textContent = "Onvoldoende saldo voor deze transactie.";
+        messageDiv.classList.add("error");
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Logo</a>
+        <nav class="navbar">
+            <a href="#">Rekeningen</a>
+            <a href="#">Overschrijvingen</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#">Pagina 4</a>
+            <a href="inloggen.html">Inloggen</a>
+        </nav>
+    </header>
+    <section>
+        <div class="dashboard">
+            <h1>Rekeningbeheer Dashboard</h1>
+            <h2>Uw Rekeningen</h2>
+            <div id="rekeningen">
+                <div class="rekening">
+                    <span>Rekening 1</span>
+                    <span>€100.50</span>
+            </div>
+                <div class="rekening">
+                    <span>Rekening 2</span>
+                    <span>€70.50</span>
+                </div>
+            </div>
+            <button class="button" id="addRekening">Nieuwe Rekening Aanmaken</button>
+            <div class="form hidden" id="formContainer">
+                <input type="text" id="rekeningNaam" placeholder="Rekeningnaam" />
+                <button class="button" id="createRekening">Maak Nieuwe Rekening Aan</button>
+            </div>
+        </div>
+        </section>
+    <script src="script.js"></script>
+</body>
+</html>

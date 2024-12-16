@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inloggen</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Logo</a>
+        <nav class="navbar">
+            <a href="#">Rekeningen</a>
+            <a href="overschrijven.html">Overschrijvingen</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#">Pagina 4</a>
+            <a href="inloggen.html">Inloggen</a>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+    <form id="loginVorm" onsubmit="return false;" class="vorm">
+        <label for="gebruikersnaam">Gebruikersnaam<input type="text" id="gebruikersnaam" required title="Voel de juiste gebruikersnaam" /></label>
+        <label for="wachtwoord">Wachtwoord <input type="password" id="wachtwoord" title="Voel uw wachtwoord in" required></label>
+        <button type="button" onclick="handleLogin()">Inloggen</button>
+    </form>
+    </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
